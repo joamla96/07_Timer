@@ -15,14 +15,19 @@ namespace _07_Timer {
 				this.seconds -= 60;
 				this.minutes++;
 
-				if(minutes >= 60) {
-					this.minutes -= 60;
+				if(minutes == 60) {
+					this.minutes = 0;
 					this.hours++;
 				}
 			}
 
-			return String.Format("{0:00}:{1:00}:{2:00}", 
-					this.hours, this.minutes, this.seconds);
+			return this.Padded(this.seconds) 
+				+ this.Padded(this.minutes) 
+				+ this.Padded(this.hours);
+		}
+
+		public string Padded(int Input) {
+			return String.Format("{0:00}", Input);
 		}
 	}
 }

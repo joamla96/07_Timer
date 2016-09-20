@@ -44,24 +44,21 @@ namespace _07_Timer
             timer.Seconds = 4000;
             Assert.AreEqual("01:06:40", timer.ToString());
         }
-        // One way to implement the Timer is with a helper method.
-        // Uncomment these specs if you want to test-drive that
-        // method, then call that method from inside of ToString().
+		// One way to implement the Timer is with a helper method.
+		// Uncomment these specs if you want to test-drive that
+		// method, then call that method from inside of ToString().
 
-        //[TestMethod]
-        //public void PadsZero()
-        //{
-        //    Assert.AreEqual("00", timer.Padded(0));
-        //}
-        //[TestMethod]
-        //public void PadsOne()
-        //{
-        //    Assert.AreEqual("01", timer.Padded(1));
-        //}
-        //[TestMethod]
-        //public void DoesNotPad()
-        //{
-        //    Assert.AreEqual("12", timer.Padded(12));
-        //}
-    }
+		[TestMethod]
+		public void PadsZero() {
+			Assert.AreEqual("00", timer.Padded(0));
+		}
+		[TestMethod]
+		public void PadsOne() {
+			Assert.AreEqual("01", timer.Padded(1));
+		}
+		[TestMethod]
+		public void DoesNotPad() {
+			Assert.AreEqual("12", timer.Padded(12));
+		}
+	}
 }
