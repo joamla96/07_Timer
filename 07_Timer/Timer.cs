@@ -1,4 +1,6 @@
-﻿namespace _07_Timer {
+﻿using System;
+
+namespace _07_Timer {
 	internal class Timer {
 		private int seconds = 0;
 		private int minutes = 0;
@@ -19,7 +21,8 @@
 				}
 			}
 
-			return this.hours + ":" + this.minutes + ":" + this.seconds;
+			return String.Format("{0:00}:{1:00}:{2:00}", 
+					this.hours, this.minutes, this.seconds);
 		}
 	}
 }
